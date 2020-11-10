@@ -1,32 +1,19 @@
 import { Redirect } from 'react-router-dom';
 import React, { lazy } from 'react';
-import NotFound from '../containers/404';
 
-const OrderList = lazy(() => import('../containers/order/index'));
-const OrderDetail = lazy(() => import('../containers/order/detail'));
+const DashBoard = lazy(() => import('containers/dashboard/index'));
+const NotFound = lazy(() => import('containers/404'));
 
 const routes = [
   {
     path: '/',
-    component() {
-      return <Redirect to={'/order'} />;
-    },
-    exact: true,
-  },
-  {
-    path: '/order/:id',
-    component: OrderDetail,
-    exact: true,
-  },
-  {
-    path: '/order',
-    component: OrderList,
-    exact: true,
+    exact: false,
+    component: DashBoard,
   },
   {
     path: '*',
-    component: NotFound,
     exact: true,
+    component: NotFound,
   },
 ];
 
