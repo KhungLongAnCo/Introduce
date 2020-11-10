@@ -5,12 +5,12 @@ import images from 'assets/images/index';
 import { useScrollTracking } from 'hooks/useMenu';
 
 const CustomHeader = styled.div<{ active: boolean }>`
+  position: fixed;
   padding: 10px;
   background: ${({ theme, active }) => (active ? theme.header : 'transparent')};
   display: flex;
   flex-direction: row;
   width: 100%;
-  position: fixed;
   height: 90px;
   transition: ease-in-out 0.3s all;
   top: 0;
@@ -50,6 +50,7 @@ const WrapMenu = styled.ul`
     display: block;
     padding: 10px 20px;
     font-size: 22px;
+    color: white;
     font-weight: bold;
     cursor: pointer;
   }
@@ -64,14 +65,14 @@ const Header: FC<Props> = ({ changePageMode }) => {
   return (
     <CustomHeader active={position > 90}>
       <WrapAvatar>
-        <img src="" alt="avatar" />
-        {/* <div className="name">Luân Luân</div> */}
+        <img src={images?.avatar} alt="avatar" />
+        <div className="name">Luân Luân</div>
       </WrapAvatar>
       <WrapMenu>
-        <li>Intro</li>
-        <li>Intro</li>
-        <li>Intro</li>
-        <li>Intro</li>
+        <li>Home</li>
+        <li>About</li>
+        <li>Skills</li>
+        <li>Career</li>
       </WrapMenu>
       <Button onClick={changePageMode}>Change Mode</Button>
     </CustomHeader>

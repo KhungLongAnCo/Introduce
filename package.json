@@ -16,6 +16,7 @@
     "@ant-design/icons": "^4.2.2",
     "@types/styled-components": "^5.1.4",
     "antd": "^4.7.2",
+    "aos": "^2.3.4",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
     "date-fns": "^2.16.1",
