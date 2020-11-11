@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Container, Title } from 'components/ui/common/index';
+import images from 'assets/images/index';
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,8 +13,8 @@ const ShowSkill = keyframes`
  100% { left: auto; opacity:1;}
  `;
 const SkillItem = styled.div`
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   margin: 10px;
   display: flex;
   align-items: center;
@@ -24,25 +25,63 @@ const SkillItem = styled.div`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
-  border: ${({ theme }) => `solid 3px ${theme.text}`};
+  border: ${({ theme }) => `solid 3px ${theme.buttonColor}`};
+  cursor: pointer;
   :hover {
-    cursor: pointer;
     transform: scale(1.1);
   }
   animation: ${ShowSkill};
   animation-duration: 4s;
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  .description {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
 `;
+
+const ListSkills = [
+  {
+    name: 'HTML',
+    icon: images.reactIcon,
+  },
+  {
+    name: 'CSS',
+    icon: images.cssIcon,
+  },
+  {
+    name: 'JAVASCRIPT',
+    icon: images.jsIcon,
+  },
+  {
+    name: 'REACT JS',
+    icon: images.reactIcon,
+  },
+  {
+    name: 'NEXT JS',
+    icon: images.nextJsIcon,
+  },
+  {
+    name: 'MySQL',
+    icon: images.sqlIcon,
+  },
+];
 
 const Skills = () => {
   return (
     <Container data-aos="fade-left">
       <Title>*My Skills</Title>
       <Wrapper>
-        <SkillItem>test</SkillItem>
-        <SkillItem>test</SkillItem>
-        <SkillItem>test</SkillItem>
-        <SkillItem>test</SkillItem>
-        <SkillItem>test</SkillItem>
+        {ListSkills.map((skill, index) => (
+          <SkillItem key={String(index)}>
+            <img src={skill.icon} alt="reactIcon" />
+            <div className="description">{skill.name}</div>
+          </SkillItem>
+        ))}
       </Wrapper>
     </Container>
   );

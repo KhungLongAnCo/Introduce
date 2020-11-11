@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, FC, ReactElement } from 'react';
 import styled from 'styled-components';
 
 interface Props extends ButtonHTMLAttributes<any> {
-  children: string | ReactElement;
+  children?: any;
 }
 const CustomButton = styled.button`
   background: ${({ theme }) => theme.buttonBackground};

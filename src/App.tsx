@@ -32,7 +32,7 @@ const App: FC = () => {
             </div>
           }
         >
-          <Header changePageMode={toggleTheme} />
+          <Header changePageMode={toggleTheme} theme={theme} />
           <Router>
             <Switch>
               {routes.map((route, index) => (

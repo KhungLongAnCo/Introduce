@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import Button from 'components/ui/button/Button';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { PageMode } from 'constants/common';
 import images from 'assets/images/index';
 import { useScrollTracking } from 'hooks/useMenu';
+import cx from 'classnames';
 
 const CustomHeader = styled.div<{ active: boolean }>`
   position: fixed;
@@ -55,11 +57,37 @@ const WrapMenu = styled.ul`
     cursor: pointer;
   }
 `;
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
 
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const CustomButton = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  .icon {
+    transition: all 0.3s ease;
+    width: 50px;
+    animation: ${rotate} 3s linear infinite;
+  }
+  .hide {
+    display: none;
+  }
+`;
+
+const { MoonIcon, SunIcon } = images;
 interface Props {
   changePageMode: () => void;
+  theme: string;
 }
-const Header: FC<Props> = ({ changePageMode }) => {
+const Header: FC<Props> = ({ changePageMode, theme }) => {
   const position = useScrollTracking();
 
   return (
@@ -74,7 +102,10 @@ const Header: FC<Props> = ({ changePageMode }) => {
         <li>Skills</li>
         <li>Career</li>
       </WrapMenu>
-      <Button onClick={changePageMode}>Change Mode</Button>
+      <CustomButton onClick={changePageMode}>
+        <MoonIcon className={cx('icon', { hide: theme === PageMode.Light })} />
+        <SunIcon className={cx('icon', { hide: theme === PageMode.Dark })} />
+      </CustomButton>
     </CustomHeader>
   );
 };
