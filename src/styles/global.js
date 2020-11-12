@@ -8,9 +8,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    overflow-x:hidden;
+    max-width:100vw;
     align-items: center;
     background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};    
+    color: ${({ theme }) => theme.text};
     height: 100vh;
     width:100%;
     margin: 0;

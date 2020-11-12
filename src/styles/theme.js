@@ -6,6 +6,7 @@ export const lightTheme = {
   toggleBorder: '#FFF',
   gradient: 'linear-gradient(to right,#aedcfa,#d7e6ec,#ffffff);',
   header: 'linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);',
+  box: 'white',
 };
 
 export const darkTheme = {
@@ -16,4 +17,5 @@ export const darkTheme = {
   toggleBorder: '#6B8096',
   gradient: 'linear-gradient(to right, #141e30, #243b55);',
   header: 'linear-gradient(to right, #f0f2f0, #000c40)',
+  box: '#a64dff',
 };

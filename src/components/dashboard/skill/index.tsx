@@ -26,7 +26,7 @@ const SkillItem = styled.div`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
-  border: ${({ theme }) => `solid 3px ${theme.buttonColor}`};
+  border: ${({ theme }) => `solid 3px ${theme.box}`};
   cursor: pointer;
   :hover {
     transform: scale(1.1);
@@ -74,18 +74,19 @@ const ListSkills = [
 
 const Skills = () => {
   return (
-    <Container data-aos="fade-left">
-      <Element name="skill" id="skill" />
-      <Title>*My Skills</Title>
-      <Wrapper>
-        {ListSkills.map((skill, index) => (
-          <SkillItem key={String(index)}>
-            <img src={skill.icon} alt="reactIcon" />
-            <div className="description">{skill.name}</div>
-          </SkillItem>
-        ))}
-      </Wrapper>
-    </Container>
+    <Element name="skill" id="skill">
+      <Container data-aos="fade-left">
+        <Title>*My Skills</Title>
+        <Wrapper>
+          {ListSkills.map((skill, index) => (
+            <SkillItem key={String(index)}>
+              <img src={skill.icon} alt="reactIcon" />
+              <div className="description">{skill.name}</div>
+            </SkillItem>
+          ))}
+        </Wrapper>
+      </Container>
+    </Element>
   );
 };
 

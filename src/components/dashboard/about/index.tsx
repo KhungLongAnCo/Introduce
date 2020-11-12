@@ -13,17 +13,18 @@ const AboutWrapper = styled.section`
 
 const AboutSection = () => {
   return (
-    <Container data-aos="fade-right">
-      <Element name="about" id="about" />
-      <AboutWrapper>
-        <Title>*About me</Title>
+    <Element name="about" id="about">
+      <Container data-aos="fade-left">
+        <AboutWrapper>
+          <Title>*About me</Title>
 
-        <h1 className="about">
-          Hi there :3 <br />
-          My name is Luan. Im a Front-end developer
-        </h1>
-      </AboutWrapper>
-    </Container>
+          <h1 className="about">
+            Hi there :3 <br />
+            My name is Luan. Im a Front-end developer
+          </h1>
+        </AboutWrapper>
+      </Container>
+    </Element>
   );
 };
 

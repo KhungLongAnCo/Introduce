@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin: 0px auto;
+  position: relative;
   max-width: 1200px;
+  overflow-x: hidden;
+  /* position: static; */
 `;
 
 export const Title = styled.h1`

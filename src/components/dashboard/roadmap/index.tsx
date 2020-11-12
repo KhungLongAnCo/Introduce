@@ -128,26 +128,27 @@ const RoadMap = () => {
     );
   }, []);
   return (
-    <Container>
-      <Element name="career" id="career" />
-      <Title>*Career Path</Title>
-      <Wrapper>
-        {Journeys.map((item, index) => (
-          <Journey key={String(index)} data-aos="fade-left">
-            {index % 2 ? (
-              renderItem(item, index)
-            ) : (
-              <div style={{ width: '50%' }} />
-            )}
-            {index % 2 === 1 ? (
-              <div style={{ width: '50%' }} />
-            ) : (
-              renderItem(item, index)
-            )}
-          </Journey>
-        ))}
-      </Wrapper>
-    </Container>
+    <Element name="career" id="career">
+      <Container>
+        <Title>*Career Path</Title>
+        <Wrapper>
+          {Journeys.map((item, index) => (
+            <Journey key={String(index)} data-aos="fade-left">
+              {index % 2 ? (
+                renderItem(item, index)
+              ) : (
+                <div style={{ width: '50%' }} />
+              )}
+              {index % 2 === 1 ? (
+                <div style={{ width: '50%' }} />
+              ) : (
+                renderItem(item, index)
+              )}
+            </Journey>
+          ))}
+        </Wrapper>
+      </Container>
+    </Element>
   );
 };
 

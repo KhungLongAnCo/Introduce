@@ -18,6 +18,7 @@ const Maxim = styled.div`
   margin: 0px auto;
   color: white;
   font-weight: bold;
+  text-shadow: 3px 3px 20px gray, -2px 1px 30px gray;
   border: solid 4px white;
   border-width: 4px 0px 4px 0px;
   font-size: 46px;
@@ -27,6 +28,7 @@ const Intro = styled.div`
   font-size: 22px;
   font-style: italic;
   text-align: right;
+  text-shadow: 3px 3px 20px gray, -2px 1px 30px gray;
   width: 70vw;
   color: white;
   margin: 30px auto 0px auto;
@@ -34,14 +36,15 @@ const Intro = styled.div`
 
 const IntroSection = () => {
   return (
-    <WrapIntroSection>
-      <Element name="home" id="home" />
-      <Maxim>
-        Be where your feet are
-        {/* Hãy sống vui với hiện tại  */}
-      </Maxim>
-      <Intro>Youth is so short, Let's rock the way you like</Intro>
-    </WrapIntroSection>
+    <Element name="home" id="home">
+      <WrapIntroSection>
+        <Maxim>
+          Be where your feet are
+          {/* Hãy sống vui với hiện tại  */}
+        </Maxim>
+        <Intro>Youth is so short, Let's rock the way you like</Intro>
+      </WrapIntroSection>
+    </Element>
   );
 };
 

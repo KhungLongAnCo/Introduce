@@ -1,13 +1,32 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import Button from 'components/ui/button/Button';
 import styled, { keyframes } from 'styled-components';
 import { PageMode } from 'constants/common';
 import images from 'assets/images/index';
-import { Link } from 'react-scroll';
+import { Link, scrollSpy } from 'react-scroll';
 import { useScrollTracking } from 'hooks/useMenu';
 import cx from 'classnames';
 
-const CustomHeader = styled.div<{ active: boolean }>`
+const Menu = [
+  {
+    name: 'Home',
+    to: 'home',
+  },
+  {
+    name: 'About',
+    to: 'about',
+  },
+  {
+    name: 'Skills',
+    to: 'skill',
+  },
+  {
+    name: 'Career',
+    to: 'career',
+  },
+];
+
+const CustomHeader = styled.div<{ active: boolean; mobile: boolean }>`
   position: fixed;
   padding: 10px;
   background: ${({ theme, active }) => (active ? theme.header : 'transparent')};
@@ -25,6 +44,8 @@ const CustomHeader = styled.div<{ active: boolean }>`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset`
       : 'none'};
+  transition: all 0.5s ease;
+  overflow-x: hidden;
 `;
 
 const WrapAvatar = styled.div`
@@ -56,8 +77,12 @@ const WrapMenu = styled.ul`
     color: white;
     font-weight: bold;
     cursor: pointer;
-    .active {
+    text-shadow: 3px 3px 20px gray, -2px 1px 30px gray;
+    a {
       color: black;
+    }
+    .active {
+      color: blue;
     }
   }
 `;
@@ -92,63 +117,32 @@ interface Props {
   theme: string;
 }
 const Header: FC<Props> = ({ changePageMode, theme }) => {
+  const [menuMobile, openMenuMobile] = useState(false);
   const position = useScrollTracking();
-
+  useEffect(() => {
+    scrollSpy.update();
+  });
   return (
-    <CustomHeader active={position > 90}>
+    <CustomHeader active={position > 90} mobile={menuMobile}>
       <WrapAvatar>
         <img src={images?.avatar} alt="avatar" />
         <div className="name">Luân Luân</div>
       </WrapAvatar>
       <WrapMenu>
-        <li>
-          <Link
-            activeClass="active"
-            spy={true}
-            to="home"
-            offset={-100}
-            duration={500}
-            smooth={true}
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            activeClass="active"
-            spy={true}
-            to="about"
-            offset={-100}
-            duration={500}
-            smooth={true}
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            activeClass="active"
-            spy={true}
-            to="skill"
-            offset={-100}
-            duration={500}
-            smooth={true}
-          >
-            Skills
-          </Link>
-        </li>
-        <li>
-          <Link
-            activeClass="active"
-            spy={true}
-            to="career"
-            offset={-100}
-            duration={500}
-            smooth={true}
-          >
-            Career
-          </Link>
-        </li>
+        {Menu.map((menu) => (
+          <li key={menu.name}>
+            <Link
+              activeClass="active"
+              spy={true}
+              to={menu.to}
+              offset={-50}
+              duration={500}
+              smooth={true}
+            >
+              {menu.name}
+            </Link>
+          </li>
+        ))}
       </WrapMenu>
       <CustomButton onClick={changePageMode}>
         <MoonIcon className={cx('icon', { hide: theme === PageMode.Light })} />
