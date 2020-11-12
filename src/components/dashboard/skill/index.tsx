@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { Element } from 'react-scroll';
 import { Container, Title } from 'components/ui/common/index';
 import images from 'assets/images/index';
 
@@ -74,6 +75,7 @@ const ListSkills = [
 const Skills = () => {
   return (
     <Container data-aos="fade-left">
+      <Element name="skill" id="skill" />
       <Title>*My Skills</Title>
       <Wrapper>
         {ListSkills.map((skill, index) => (

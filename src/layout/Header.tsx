@@ -3,6 +3,7 @@ import Button from 'components/ui/button/Button';
 import styled, { keyframes } from 'styled-components';
 import { PageMode } from 'constants/common';
 import images from 'assets/images/index';
+import { Link } from 'react-scroll';
 import { useScrollTracking } from 'hooks/useMenu';
 import cx from 'classnames';
 
@@ -55,6 +56,9 @@ const WrapMenu = styled.ul`
     color: white;
     font-weight: bold;
     cursor: pointer;
+    .active {
+      color: black;
+    }
   }
 `;
 const rotate = keyframes`
@@ -97,10 +101,54 @@ const Header: FC<Props> = ({ changePageMode, theme }) => {
         <div className="name">Luân Luân</div>
       </WrapAvatar>
       <WrapMenu>
-        <li>Home</li>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Career</li>
+        <li>
+          <Link
+            activeClass="active"
+            spy={true}
+            to="home"
+            offset={-100}
+            duration={500}
+            smooth={true}
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass="active"
+            spy={true}
+            to="about"
+            offset={-100}
+            duration={500}
+            smooth={true}
+          >
+            About
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass="active"
+            spy={true}
+            to="skill"
+            offset={-100}
+            duration={500}
+            smooth={true}
+          >
+            Skills
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass="active"
+            spy={true}
+            to="career"
+            offset={-100}
+            duration={500}
+            smooth={true}
+          >
+            Career
+          </Link>
+        </li>
       </WrapMenu>
       <CustomButton onClick={changePageMode}>
         <MoonIcon className={cx('icon', { hide: theme === PageMode.Light })} />

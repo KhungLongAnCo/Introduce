@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Element } from 'react-scroll';
 
 const WrapIntroSection = styled.div`
   z-index: 10;
   height: 500px;
-  background-image: url('https://i.ytimg.com/vi/zzY3HAmwr1E/maxresdefault.jpg');
+  background-image: url('https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-0/p180x540/52868251_2234390230221012_3085411747037708288_o.jpg?_nc_cat=109&ccb=2&_nc_sid=e3f864&_nc_ohc=MF9EUx8hI4cAX9g1_b9&_nc_ht=scontent-sin6-2.xx&tp=6&oh=2e3d273f0f258117c7d03bfb43149e4d&oe=5FD37BBE');
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -34,6 +35,7 @@ const Intro = styled.div`
 const IntroSection = () => {
   return (
     <WrapIntroSection>
+      <Element name="home" id="home" />
       <Maxim>
         Be where your feet are
         {/* Hãy sống vui với hiện tại  */}
