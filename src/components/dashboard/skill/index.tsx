@@ -70,6 +70,18 @@ const ListSkills = [
     name: 'MySQL',
     icon: images.sqlIcon,
   },
+  {
+    name: 'BOOTSTRAP',
+    icon: 'https://cdn.iconscout.com/icon/free/png-256/bootstrap-226077.png',
+  },
+  {
+    name: 'JQUERY',
+    icon: 'https://cdn.iconscout.com/icon/free/png-512/jquery-10-1175155.png',
+  },
+  {
+    name: 'TYPESCRIPT',
+    icon: 'https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png',
+  },
 ];
 
 const Skills = () => {

@@ -6,6 +6,9 @@ export const Container = styled.div`
   max-width: 1200px;
   overflow-x: hidden;
   /* position: static; */
+  @media screen and (max-width: 768px) {
+    padding: 0px 10px;
+  }
 `;
 
 export const Title = styled.h1`

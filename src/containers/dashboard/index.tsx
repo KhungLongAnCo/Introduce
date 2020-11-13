@@ -8,7 +8,6 @@ import Footer from 'layout/Footer';
 
 const Container = styled.div`
   color: ${({ theme }) => theme.text};
-  margin-bottom: 50px;
 `;
 
 const DashBoard = () => {

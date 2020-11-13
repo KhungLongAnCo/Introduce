@@ -3,6 +3,8 @@ import Button from 'components/ui/button/Button';
 import styled, { keyframes } from 'styled-components';
 import { PageMode } from 'constants/common';
 import images from 'assets/images/index';
+import MenuOutlined from '@ant-design/icons/MenuOutlined';
+import UpOutlined from '@ant-design/icons/UpOutlined';
 import { Link, scrollSpy } from 'react-scroll';
 import { useScrollTracking } from 'hooks/useMenu';
 import cx from 'classnames';
@@ -34,7 +36,6 @@ const CustomHeader = styled.div<{ active: boolean; mobile: boolean }>`
   flex-direction: row;
   width: 100%;
   height: 90px;
-  transition: ease-in-out 0.3s all;
   top: 0;
   z-index: ${({ active }) => (active ? 100 : 1)};
   justify-content: space-between;
@@ -44,8 +45,15 @@ const CustomHeader = styled.div<{ active: boolean; mobile: boolean }>`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset`
       : 'none'};
-  transition: all 0.5s ease;
   overflow-x: hidden;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: ${({ mobile }) => (!mobile ? '0px' : '315px')};
+    padding: ${({ mobile }) => (!mobile ? '0px' : '10px')};
+    transition: ease 1s all;
+    background: ${({ theme }) => theme.header};
+    overflow: hidden;
+  }
 `;
 
 const WrapAvatar = styled.div`
@@ -64,12 +72,35 @@ const WrapAvatar = styled.div`
     font-weight: bold;
     color: #fff;
     font-size: 22px;
+    white-space: nowrap;
   }
 `;
 
 const WrapMenu = styled.ul`
   list-style: none;
   display: flex;
+  padding-right: 100px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding-left: 60px;
+    padding-right: 0px;
+  }
+  .close-menu {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+      width: 40px;
+      position: absolute;
+      transition: ease 1s all;
+      bottom: -9px;
+      left: 96px;
+      cursor: pointer;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
   li {
     display: block;
     padding: 10px 20px;
@@ -78,12 +109,12 @@ const WrapMenu = styled.ul`
     font-weight: bold;
     cursor: pointer;
     text-shadow: 3px 3px 20px gray, -2px 1px 30px gray;
-    a {
-      color: black;
-    }
-    .active {
-      color: blue;
-    }
+  }
+  a {
+    color: black;
+  }
+  .active {
+    color: #1855b8;
   }
 `;
 const rotate = keyframes`
@@ -98,6 +129,10 @@ const rotate = keyframes`
 
 const CustomButton = styled.div`
   display: flex;
+  position: fixed;
+  right: 10px;
+  z-index: 120;
+  top: 10px;
   align-items: center;
   cursor: pointer;
   justify-content: center;
@@ -108,6 +143,20 @@ const CustomButton = styled.div`
   }
   .hide {
     display: none;
+  }
+`;
+const MenuMobile = styled.div`
+  position: fixed;
+  left: 10px;
+  cursor: pointer;
+  top: 10px;
+  color: ${({ theme }) => theme.text};
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: ${({ theme }) => theme.body};
+  z-index: 10;
+  svg {
+    width: 50px;
+    height: 40px;
   }
 `;
 
@@ -123,32 +172,45 @@ const Header: FC<Props> = ({ changePageMode, theme }) => {
     scrollSpy.update();
   });
   return (
-    <CustomHeader active={position > 90} mobile={menuMobile}>
-      <WrapAvatar>
-        <img src={images?.avatar} alt="avatar" />
-        <div className="name">Luân Luân</div>
-      </WrapAvatar>
-      <WrapMenu>
-        {Menu.map((menu) => (
-          <li key={menu.name}>
-            <Link
-              activeClass="active"
-              spy={true}
-              to={menu.to}
-              offset={-50}
-              duration={500}
-              smooth={true}
-            >
-              {menu.name}
-            </Link>
-          </li>
-        ))}
-      </WrapMenu>
-      <CustomButton onClick={changePageMode}>
-        <MoonIcon className={cx('icon', { hide: theme === PageMode.Light })} />
-        <SunIcon className={cx('icon', { hide: theme === PageMode.Dark })} />
-      </CustomButton>
-    </CustomHeader>
+    <div>
+      <CustomHeader active={position > 90} mobile={menuMobile}>
+        <WrapAvatar>
+          <img src={images?.avatar} alt="avatar" />
+          <div className="name">Luân Luân</div>
+        </WrapAvatar>
+        <WrapMenu>
+          {Menu.map((menu) => (
+            <li key={menu.name}>
+              <Link
+                activeClass="active"
+                spy={true}
+                to={menu.to}
+                offset={-50}
+                duration={500}
+                smooth={true}
+              >
+                {menu.name}
+              </Link>
+            </li>
+          ))}
+          <UpOutlined
+            className="close-menu"
+            onClick={() => openMenuMobile(false)}
+          />
+        </WrapMenu>
+        <CustomButton onClick={changePageMode}>
+          <MoonIcon
+            className={cx('icon', { hide: theme === PageMode.Light })}
+          />
+          <SunIcon className={cx('icon', { hide: theme === PageMode.Dark })} />
+        </CustomButton>
+      </CustomHeader>
+      {!menuMobile && (
+        <MenuMobile onClick={() => openMenuMobile(true)}>
+          <MenuOutlined />
+        </MenuMobile>
+      )}
+    </div>
   );
 };
 
