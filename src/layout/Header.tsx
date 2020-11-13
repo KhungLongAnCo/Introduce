@@ -146,17 +146,21 @@ const CustomButton = styled.div`
   }
 `;
 const MenuMobile = styled.div`
-  position: fixed;
-  left: 10px;
-  cursor: pointer;
-  top: 10px;
-  color: ${({ theme }) => theme.text};
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: ${({ theme }) => theme.body};
-  z-index: 10;
-  svg {
-    width: 50px;
-    height: 40px;
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: fixed;
+    left: 10px;
+    cursor: pointer;
+    top: 10px;
+    color: ${({ theme }) => theme.text};
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: ${({ theme }) => theme.body};
+    z-index: 10;
+    svg {
+      width: 50px;
+      height: 40px;
+    }
   }
 `;
 
