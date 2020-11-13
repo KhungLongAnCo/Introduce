@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const DashBoard = () => {
   return (
-    <Container>
+    <Container style={{ overflowX: 'hidden' }}>
       <IntroSection />
       <AboutSection />
       <Skills />

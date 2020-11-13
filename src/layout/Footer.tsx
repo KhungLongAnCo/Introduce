@@ -14,6 +14,7 @@ const ContactWrapper = styled.section`
       margin-right: 10px;
     }
     a {
+      word-break: break-all;
       color: ${({ theme }) => theme.text};
       text-decoration: underline;
     }
