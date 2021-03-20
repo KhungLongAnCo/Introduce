@@ -43,13 +43,26 @@ const Wrapper = styled.div`
   .leftIntro {
     text-align: right;
     padding-right: 50px;
+    @media (max-width: 767.98px) {
+      width: 100%;
+      padding: 50px 0px 0px 0px;
+      text-align: center;
+    }
   }
   .rightIntro {
     padding-left: 50px;
+    @media (max-width: 767.98px) {
+      width: 100%;
+      padding: 50px 0px 0px 0px;
+      text-align: center;
+    }
   }
 `;
 const Journey = styled.div`
   display: flex;
+  @media (max-width: 767.98px) {
+    flex-direction: column;
+  }
 `;
 const Info = styled.div<{ bg: string }>`
   background-image: url(${({ bg }) => bg});
@@ -59,6 +72,10 @@ const Info = styled.div<{ bg: string }>`
   /* border-bottom: solid 5px; */
   position: relative;
   border-radius: 20px;
+  @media (max-width: 767.98px) {
+    width: 100%;
+    text-align: center;
+  }
   .time {
     font-size: 30px;
     font-weight: bold;
@@ -68,15 +85,25 @@ const Info = styled.div<{ bg: string }>`
     font-size: 22px;
     font-weight: bold;
     margin: 10px 0px;
+    @media (max-width: 767.98px) {
+      text-align: center;
+    }
   }
   .description {
     font-size: 18px;
     font-weight: 500;
+    @media (max-width: 767.98px) {
+      width: 100%;
+      text-align: center;
+    }
   }
   .wrapFeet {
     position: absolute;
     display: flex;
     flex-direction: column;
+    @media (max-width: 767.98px) {
+      display: none !important;
+    }
     :first-child {
       display: none;
     }
@@ -130,17 +157,23 @@ const RoadMap = () => {
   return (
     <Element name="career" id="career">
       <Container>
-        <Title>*Career Path</Title>
+        <Title>* Journeys-Experiences</Title>
         <Wrapper>
           {Journeys.map((item, index) => (
             <Journey key={String(index)} data-aos="fade-left">
               {index % 2 ? (
                 renderItem(item, index)
               ) : (
-                <div style={{ width: '50%' }} />
+                <div
+                  className="d-none d-sm-block d-md-none w-50"
+                  style={{ width: '50%' }}
+                />
               )}
               {index % 2 === 1 ? (
-                <div style={{ width: '50%' }} />
+                <div
+                  className="d-none d-sm-block d-md-none w-50"
+                  style={{ width: '50%' }}
+                />
               ) : (
                 renderItem(item, index)
               )}

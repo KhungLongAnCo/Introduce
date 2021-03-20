@@ -8,7 +8,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  height: auto;
+  overflow: hidden;
+  @media (max-width: 767.98px) {
+    justify-content: center;
+  }
 `;
 
 const ShowSkill = keyframes`
@@ -16,8 +21,9 @@ const ShowSkill = keyframes`
  100% { left: auto; opacity:1;}
  `;
 const SkillItem = styled.div`
-  height: 120px;
-  width: 120px;
+  justify-content: center;
+  height: 200px;
+  width: 200px;
   margin: 10px;
   display: flex;
   align-items: center;
@@ -49,11 +55,15 @@ const SkillItem = styled.div`
 const ListSkills = [
   {
     name: 'HTML',
-    icon: images.reactIcon,
+    icon: images.htmlIcon,
   },
   {
     name: 'CSS',
     icon: images.cssIcon,
+  },
+  {
+    name: 'TAILWIND',
+    icon: images.tailwindIcon,
   },
   {
     name: 'JAVASCRIPT',

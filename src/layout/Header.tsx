@@ -50,7 +50,7 @@ const CustomHeader = styled.div<{ active: boolean; mobile: boolean }>`
     flex-direction: column;
     height: ${({ mobile }) => (!mobile ? '0px' : '315px')};
     padding: ${({ mobile }) => (!mobile ? '0px' : '10px')};
-    transition: ease 1s all;
+    transition: ease 0.5s all;
     background: ${({ theme }) => theme.header};
     overflow: hidden;
   }
@@ -111,7 +111,7 @@ const WrapMenu = styled.ul`
     text-shadow: 3px 3px 20px gray, -2px 1px 30px gray;
   }
   a {
-    color: black;
+    color: ${({ theme }) => theme.text};
   }
   .active {
     color: #1855b8;
