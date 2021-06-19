@@ -8,6 +8,7 @@ import UpOutlined from '@ant-design/icons/UpOutlined';
 import { Link, scrollSpy } from 'react-scroll';
 import { useScrollTracking } from 'hooks/useMenu';
 import cx from 'classnames';
+import CatImg from 'assets/images/common/cat_cute.png';
 
 const Menu = [
   {
@@ -168,6 +169,14 @@ const MenuMobile = styled.div`
   }
 `;
 
+const CatCute = styled.img<{ active: boolean }>`
+  position: fixed;
+  right: 0;
+  bottom: 32vh;
+  transform: ${({ active }) => (active ? 'scale(1)' : 'scale(0)')};
+  transition: ease 0.3s all;
+`;
+
 const { MoonIcon, SunIcon } = images;
 interface Props {
   changePageMode: () => void;
@@ -225,6 +234,7 @@ const Header: FC<Props> = ({ changePageMode, theme }) => {
           <MenuOutlined />
         </MenuMobile>
       )}
+      <CatCute src={CatImg} alt="CatImg" active={position > 330} />
     </div>
   );
 };

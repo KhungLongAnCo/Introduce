@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const ContactWrapper = styled.section`
   color: ${({ theme }) => theme.text};
   padding: 10px;
-  margin-top: 100px;
   background: #cbd4d4;
   display: flex;
   justify-content: space-between;
