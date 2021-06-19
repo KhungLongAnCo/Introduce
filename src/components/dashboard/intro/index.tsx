@@ -5,7 +5,7 @@ import BannerImg from '../../../assets/images/common/banner.jpg';
 
 const WrapIntroSection = styled.div`
   z-index: 10;
-  height: 500px;
+  height: 650px;
   background-image: url(${BannerImg});
   background-repeat: no-repeat;
   background-position: bottom;

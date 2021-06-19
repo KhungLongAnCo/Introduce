@@ -5,6 +5,7 @@ import IntroSection from 'components/dashboard/intro';
 import Skills from 'components/dashboard/skill/index';
 import RoadMap from 'components/dashboard/roadmap/index';
 import Footer from 'layout/Footer';
+import ListProjects from 'components/dashboard/list-projects/index';
 
 const Container = styled.div`
   color: ${({ theme }) => theme.text};
@@ -17,6 +18,7 @@ const DashBoard = () => {
       <AboutSection />
       <Skills />
       <RoadMap />
+      <ListProjects />
       <Footer />
     </Container>
   );

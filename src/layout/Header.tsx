@@ -26,6 +26,10 @@ const Menu = [
     name: 'Career',
     to: 'career',
   },
+  {
+    name: 'Projects',
+    to: 'projects',
+  },
 ];
 
 const CustomHeader = styled.div<{ active: boolean; mobile: boolean }>`
@@ -175,6 +179,13 @@ const Header: FC<Props> = ({ changePageMode, theme }) => {
   useEffect(() => {
     scrollSpy.update();
   });
+  useEffect(() => {
+    const currentTime = new Date();
+    const currentOur = currentTime.getHours();
+    if (currentOur < 6 || currentOur > 18) {
+      changePageMode();
+    }
+  }, []);
   return (
     <div>
       <CustomHeader active={position > 90} mobile={menuMobile}>

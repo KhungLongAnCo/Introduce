@@ -8,6 +8,9 @@ const AboutWrapper = styled.section`
 
   .about {
     color: ${({ theme }) => theme.text};
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
   }
 `;
 

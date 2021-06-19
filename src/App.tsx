@@ -6,13 +6,13 @@ import { lightTheme, darkTheme } from 'styles/theme';
 import { ThemeProvider } from 'styled-components';
 import Spin from 'antd/lib/spin';
 import { store } from 'store';
-import { history } from 'helpers/history';
 import { GlobalStyles } from 'styles/global';
 import { PageMode } from 'constants/common';
 import routes from 'routes/app.route';
 import Header from 'layout/Header';
 import 'antd/dist/antd.css';
 import 'aos/dist/aos.css';
+import 'swiper/css/swiper.css';
 
 AOS.init();
 

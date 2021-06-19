@@ -6,7 +6,8 @@ const ContactWrapper = styled.section`
   padding: 10px;
   margin-top: 100px;
   background: #cbd4d4;
-  /* background: ${({ theme }) => theme.header}; */
+  display: flex;
+  justify-content: space-between;
   .about {
     color: ${({ theme }) => theme.text};
     .wrap-info {
