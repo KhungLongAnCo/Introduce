@@ -175,6 +175,9 @@ const CatCute = styled.img<{ active: boolean }>`
   bottom: 32vh;
   transform: ${({ active }) => (active ? 'scale(1)' : 'scale(0)')};
   transition: ease 0.3s all;
+  @media screen and (max-width: 768px) {
+    left: calc(100vw - 100px);
+  }
 `;
 
 const { MoonIcon, SunIcon } = images;
