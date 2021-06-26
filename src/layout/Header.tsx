@@ -53,11 +53,12 @@ const CustomHeader = styled.div<{ active: boolean; mobile: boolean }>`
   overflow-x: hidden;
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    height: ${({ mobile }) => (!mobile ? '0px' : '315px')};
+    height: ${({ mobile }) => (!mobile ? '0px' : '400px')};
     padding: ${({ mobile }) => (!mobile ? '0px' : '10px')};
     transition: ease 0.5s all;
     background: ${({ theme }) => theme.header};
     overflow: hidden;
+    justify-content: flex-start;
   }
 `;
 
@@ -212,9 +213,10 @@ const Header: FC<Props> = ({ changePageMode, theme }) => {
                 activeClass="active"
                 spy={true}
                 to={menu.to}
-                offset={-50}
+                offset={-200}
                 duration={500}
                 smooth={true}
+                onClick={() => openMenuMobile(false)}
               >
                 {menu.name}
               </Link>

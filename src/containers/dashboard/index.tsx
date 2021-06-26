@@ -7,6 +7,7 @@ import RoadMap from 'components/dashboard/roadmap/index';
 import Footer from 'layout/Footer';
 import ListProjects from 'components/dashboard/list-projects/index';
 import SEO from 'components/seo/index';
+import CarRunning from 'components/ui/cat-running/index';
 
 const Container = styled.div`
   color: ${({ theme }) => theme.text};
@@ -19,7 +20,9 @@ const DashBoard = () => {
       <IntroSection />
       <AboutSection />
       <Skills />
+      <CarRunning />
       <RoadMap />
+      <CarRunning />
       <ListProjects />
       <Footer />
     </Container>

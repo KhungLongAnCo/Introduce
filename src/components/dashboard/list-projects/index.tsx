@@ -15,6 +15,7 @@ const ListProject = [
     members: 'More than 10',
     role: 'Front-End Developer',
     link: 'https://www.bicyclebluebook.com/',
+    technologies: 'React Js, HTML, SCSS ...',
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ const ListProject = [
     members: 'More than 5',
     role: 'Front-End Developer',
     link: 'https://intelads.vn/',
+    technologies: 'Js, HTML, SCSS ...',
   },
   {
     id: 3,
@@ -35,6 +37,36 @@ const ListProject = [
     members: '2',
     role: 'Front-End Developer',
     link: '',
+    technologies: 'Js, HTML, SCSS ...',
+  },
+  {
+    id: 4,
+    name: 'Pipeflare',
+    description: <>Marketing Zen crypto currency.</>,
+    members: 'More than 20',
+    role: 'Front-End Developer',
+    link: 'https://pipeflare.io/',
+    technologies: 'Ruby, HTML, Css, Js ...',
+  },
+  {
+    id: 4,
+    name: 'Horizen',
+    description: <>Marketing Zen crypto currency.</>,
+    members: 'More than 20',
+    role: 'Front-End Developer',
+    link: 'https://www.horizen.io/',
+    technologies: 'Laravel, Php, Js ...',
+  },
+  {
+    id: 5,
+    name: 'Bicycle Blue Book V3',
+    description: (
+      <>A Marketplace helps you buying and selling bicycles easily.</>
+    ),
+    members: 'More than 5',
+    role: 'Front-End Developer',
+    // link: 'https://www.bicyclebluebook.com/',
+    technologies: 'Next Js, HTML, SCSS, Typescript ...',
   },
 ];
 
@@ -64,6 +96,10 @@ const slideOptions: SwiperOptions = {
 
 const Wrapper = styled.div`
   padding: 3rem 0px;
+  position: relative;
+  .swiper-slide {
+    height: auto !important;
+  }
 `;
 const ProjectItem = styled.div`
   padding: 3rem 0px;
@@ -99,6 +135,29 @@ const ProjectItem = styled.div`
     text-decoration: underline;
     font-style: italic;
   }
+`;
+const NextBtn = styled.div`
+  @keyframes animation {
+    0% {
+      right: -40px;
+    }
+    50% {
+      right: -55px;
+    }
+    100% {
+      right: -40px;
+    }
+  }
+  position: absolute;
+  font-weight: bold;
+  font-size: 50px;
+  right: -40px;
+  top: 36%;
+  animation-name: animation;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  cursor: pointer;
+  animation-iteration-count: infinite;
 `;
 
 const ListProjects = () => {
@@ -140,6 +199,9 @@ const ListProjects = () => {
                     <div className="info">
                       <b className="label">Team member:</b> {item.members}
                     </div>
+                    <div className="info">
+                      <b className="label">Technologies:</b> {item.technologies}
+                    </div>
                   </div>
                   {item.link ? (
                     <a
@@ -153,10 +215,21 @@ const ListProjects = () => {
                   ) : (
                     <div className="visit">private</div>
                   )}
+                  {/* {item.link2 && (
+                    <a
+                      href={item.link2}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      className="visit"
+                    >
+                      Visit now (web 2)
+                    </a>
+                  )} */}
                 </ProjectItem>
               </div>
             ))}
           </Swiper>
+          <NextBtn onClick={goNext}>{'>'}</NextBtn>
         </Wrapper>
       </Container>
     </Element>

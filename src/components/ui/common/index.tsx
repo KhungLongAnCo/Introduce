@@ -5,7 +5,6 @@ export const Container = styled.div`
   position: relative;
   padding: 5rem 10px;
   max-width: 1200px;
-  overflow-x: hidden;
   /* position: static; */
   @media screen and (max-width: 768px) {
     padding: 3rem 10px;
