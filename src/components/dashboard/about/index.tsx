@@ -41,7 +41,7 @@ const AboutSection = () => {
 
           <h1 className="about">
             Hi there :3 <br />
-            My name is Luan. Im a Front-end developer
+            My name is Luan. I'm a Front-End Developer
           </h1>
         </div>
       </Container>

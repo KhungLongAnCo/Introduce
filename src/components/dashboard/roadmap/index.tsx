@@ -27,7 +27,7 @@ const Journeys: JourneyModel[] = [
     ),
   },
   {
-    timeLine: 'AUG 2019 - MATCH 2019',
+    timeLine: 'AUG 2019 - MARCH 2020',
     title: 'Intelads | BeeGuide',
     func: 'FULL-STACK DEVELOPER',
     description: (
