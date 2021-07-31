@@ -42,6 +42,21 @@ const AboutSection = () => {
           <h1 className="about">
             Hi there :3 <br />
             My name is Luan. I'm a Front-End Developer
+            <br />
+            I have 2 years of experience in Front-End development.
+            <br />
+            Experience working in both Production and Start-up environments.
+            <br />
+            Able to work independently as well as in a group.
+            <br />
+            My CV:{' '}
+            <a
+              href="https://bitly.com.vn/3uxw4s"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit now
+            </a>
           </h1>
         </div>
       </Container>
