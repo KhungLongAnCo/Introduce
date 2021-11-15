@@ -15,7 +15,7 @@ const ListProject = [
     members: 'More than 10',
     role: 'Front-End Developer',
     link: 'https://www.bicyclebluebook.com/',
-    technologies: 'React Js, HTML, SCSS ...',
+    technologies: 'React Js, Next Js, HTML, SCSS ...',
   },
   {
     id: 2,

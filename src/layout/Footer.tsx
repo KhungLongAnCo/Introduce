@@ -7,6 +7,7 @@ const ContactWrapper = styled.section`
   background: #cbd4d4;
   display: flex;
   justify-content: space-between;
+  text-align: center;
   .about {
     color: ${({ theme }) => theme.text};
     .wrap-info {
@@ -37,7 +38,8 @@ const ContactWrapper = styled.section`
 const Footer = () => {
   return (
     <ContactWrapper>
-      <h1 className="about">
+      <h1>Good bye</h1>
+      {/* <h1 className="about">
         <div className="wrap-info">
           <span className="label">
             <img
@@ -72,7 +74,7 @@ const Footer = () => {
             https://www.facebook.com/luan.nguyenvanluan.393/
           </a>
         </div>
-      </h1>
+      </h1> */}
     </ContactWrapper>
   );
 };

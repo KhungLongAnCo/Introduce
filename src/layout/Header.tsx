@@ -114,7 +114,7 @@ const WrapMenu = styled.ul`
     color: white;
     font-weight: bold;
     cursor: pointer;
-    text-shadow: 3px 3px 20px gray, -2px 1px 30px gray;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
   }
   a {
     color: ${({ theme }) => theme.text};
@@ -181,6 +181,11 @@ const CatCute = styled.img<{ active: boolean }>`
   }
 `;
 
+const WrapHeader = styled.div`
+  position: relative;
+  z-index: 10000;
+`;
+
 const { MoonIcon, SunIcon } = images;
 interface Props {
   changePageMode: () => void;
@@ -200,10 +205,10 @@ const Header: FC<Props> = ({ changePageMode, theme }) => {
     }
   }, []);
   return (
-    <div>
+    <WrapHeader>
       <CustomHeader active={position > 90} mobile={menuMobile}>
         <WrapAvatar>
-          <img src={images?.avatar} alt="avatar" />
+          <img src={images?.avatar2} alt="avatar" />
           <div className="name">Luân Luân</div>
         </WrapAvatar>
         <WrapMenu>
@@ -240,7 +245,7 @@ const Header: FC<Props> = ({ changePageMode, theme }) => {
         </MenuMobile>
       )}
       <CatCute src={CatImg} alt="CatImg" active={position > 330} />
-    </div>
+    </WrapHeader>
   );
 };
 
