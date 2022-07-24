@@ -51,7 +51,7 @@ const AboutSection = () => {
             <br />
             My CV:{' '}
             <a
-              href="https://bitly.com.vn/3uxw4s"
+              href="https://www.topcv.vn/xem-cv/VwYCUwIDBF0DBgBWAV9ZAFNeAwgDBwJQAFUEAw23b5"
               target="_blank"
               rel="noopener noreferrer"
             >
