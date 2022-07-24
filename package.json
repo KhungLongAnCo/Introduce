@@ -2,10 +2,13 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://KhungLongAnCo.github.io/Introduce/",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "husky": {
     "hooks": {
@@ -22,6 +25,7 @@
     "bootstrap": "^4.5.3",
     "date-fns": "^2.16.1",
     "eslint-plugin-prettier": "^3.1.4",
+    "gh-pages": "^4.0.0",
     "history": "4.10.1",
     "husky": "^4.3.0",
     "lodash": "^4.17.20",
