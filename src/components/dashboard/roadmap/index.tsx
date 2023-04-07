@@ -16,8 +16,8 @@ interface JourneyModel {
 }
 const Journeys: JourneyModel[] = [
   {
-    timeLine: 'APR 2020 - Now',
-    title: 'VMO',
+    timeLine: 'APRIL 2020 - Now',
+    title: 'VMO-GROUP',
     func: 'FRONT-END DEVELOPER',
     description: (
       <div>
@@ -27,7 +27,7 @@ const Journeys: JourneyModel[] = [
     ),
   },
   {
-    timeLine: 'AUG 2019 - MARCH 2020',
+    timeLine: 'AUGUST 2019 - MARCH 2020',
     title: 'Intelads | BeeGuide',
     func: 'FULL-STACK DEVELOPER',
     description: (

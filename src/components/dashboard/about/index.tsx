@@ -41,11 +41,11 @@ const AboutSection = () => {
 
           <h1 className="about">
             Hi there :3 <br />
-            My name is Luan. I'm a Front-End Developer
+            My name is Levi. I'm a Front-End Developer
             <br />
-            I have 2 years of experience in Front-End development.
+            I have 4 years of experiences in Front-End development.
             <br />
-            Experience working in both Production and Start-up environments.
+            Experience working in both Production and Start-Up environments.
             <br />
             Able to work independently as well as in a group.
             <br />

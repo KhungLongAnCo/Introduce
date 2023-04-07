@@ -59,6 +59,7 @@ const WrapSocials = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  background: #b0a5a5;
   @media screen and (max-width: 768px) {
     flex-direction: row;
   }
@@ -73,8 +74,10 @@ const WrapSocials = styled.div`
       width: 50px;
       height: 50px;
     }
+    transform: scale(0.9);
     &:hover {
       filter: grayscale(0);
+      transform: scale(1);
     }
     img {
       width: 100%;
@@ -100,6 +103,14 @@ const IntroSection = () => {
             className="social"
           >
             <img src={images.socials.githubIc} alt="githubIc" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/lu%C3%A2n-nguy%E1%BB%85n-7266b1224"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social"
+          >
+            <img src={images.socials.linkinIc} alt="linkinIc" />
           </a>
           <a
             href="mailto:luan1982000@gmail.com"

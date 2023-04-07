@@ -9,7 +9,7 @@ import jsIcon from './common/js.png';
 import nextJsIcon from './common/nextJS.png';
 import emailIc from './common/email-icon.png';
 import fbIc from './common/fb-icon.png';
-import linkinIc from './common/linkin-ic.png';
+import linkinIc from './common/linkin_icon.png';
 import githubIc from './common/github-ic.png';
 import igIc from './common/ig-icon.png';
 import { ReactComponent as FeetIcon } from './common/feet.svg';
