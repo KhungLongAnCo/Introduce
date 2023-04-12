@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Element } from 'react-scroll';
 import images from 'assets/images/index';
 import BannerImg from '../../../assets/images/common/banner.jpg';
@@ -28,6 +28,69 @@ const WrapIntroSection = styled.div`
     top: 0;
   }
 `;
+const shadows = keyframes`
+0% {
+  text-shadow: none;
+}
+10% {
+  text-shadow: 3px 3px 0 #f49b90;
+}
+20% {
+  text-shadow: 3px 3px 0 #f49b90,
+    6px 6px 0 #f28b7d;
+}
+30% {
+  text-shadow: 3px 3px 0 #f49b90,
+    6px 6px 0 #f28b7d, 9px 9px #f07a6a;
+}
+40% {
+  text-shadow: 3px 3px 0 #f49b90,
+    6px 6px 0 #f28b7d, 9px 9px #f07a6a,
+    12px 12px 0 #ee6352;
+}
+50% {
+  text-shadow: 3px 3px 0 #f49b90,
+    6px 6px 0 #f28b7d, 9px 9px #f07a6a,
+    12px 12px 0 #ee6352;
+}
+60% {
+  text-shadow: 3px 3px 0 #f49b90,
+    6px 6px 0 #f28b7d, 9px 9px #f07a6a,
+    12px 12px 0 #ee6352;
+}
+70% {
+  text-shadow: 3px 3px 0 #f49b90,
+    6px 6px 0 #f28b7d, 9px 9px #f07a6a;
+}
+80% {
+  text-shadow: 3px 3px 0 #f49b90,
+    6px 6px 0 #f28b7d;
+}
+90% {
+  text-shadow: 3px 3px 0 #f49b90;
+}
+100% {
+  text-shadow: none;
+}
+ `;
+const move = keyframes`
+ 0% {
+  transform: translate(0px, 0px);
+}
+40% {
+  transform: translate(-12px, -12px);
+}
+50% {
+  transform: translate(-12px, -12px);
+}
+60% {
+  transform: translate(-12px, -12px);
+}
+100% {
+  transform: translate(0px, 0px);
+}
+  `;
+
 const Maxim = styled.div`
   width: 70vw;
   padding: 5px 20px;
@@ -36,9 +99,21 @@ const Maxim = styled.div`
   color: white;
   font-weight: bold;
   text-shadow: 3px 3px 20px gray, -2px 1px 30px gray;
-  border: solid 4px white;
   border-width: 4px 0px 4px 0px;
   font-size: 46px;
+  text-shadow: 3px 3px 0 #f49b90, 6px 6px 0 #f28b7d, 9px 9px #f07a6a,
+    12px 12px 0 #ee6352;
+  font-family: bungee, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: calc(2rem + 5vw);
+
+  color: #f6aca2;
+  //color: transparent;
+  //background-color: white;
+  //background-clip: text;
+  animation: ${shadows} 2.2s ease-in infinite, ${move} 2.2s ease-in infinite;
+  letter-spacing: 0.4rem;
 `;
 
 const Intro = styled.div`
