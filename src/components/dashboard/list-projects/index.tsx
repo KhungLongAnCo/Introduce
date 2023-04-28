@@ -19,6 +19,17 @@ const ListProject = [
   },
   {
     id: 2,
+    name: 'I-nautix',
+    description: (
+      <>Global Market Place for Inspectors and Inspection Management</>
+    ),
+    members: 'More than 10',
+    role: 'Front-End Developer',
+    link: 'https://dev.i-nautix.com/',
+    technologies: 'React Js, Nest Js, SCSS ...',
+  },
+  {
+    id: 3,
     name: 'IntelAds',
     description: (
       <>
@@ -31,7 +42,7 @@ const ListProject = [
     technologies: 'Js, HTML, SCSS ...',
   },
   {
-    id: 3,
+    id: 4,
     name: 'Angkorpass reseller',
     description: <>Selling and managing tickets for angkor temple.</>,
     members: '2',
@@ -40,7 +51,7 @@ const ListProject = [
     technologies: 'Js, HTML, SCSS ...',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Pipeflare',
     description: <>Marketing Zen crypto currency.</>,
     members: 'More than 20',
@@ -49,7 +60,7 @@ const ListProject = [
     technologies: 'Ruby, HTML, Css, Js ...',
   },
   {
-    id: 4,
+    id: 6,
     name: 'Horizen',
     description: <>Marketing Zen crypto currency.</>,
     members: 'More than 20',
@@ -58,7 +69,7 @@ const ListProject = [
     technologies: 'Laravel, Php, Js ...',
   },
   {
-    id: 5,
+    id: 7,
     name: 'Bicycle Blue Book V3',
     description: (
       <>A Marketplace helps you buying and selling bicycles easily.</>

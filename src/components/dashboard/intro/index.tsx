@@ -33,41 +33,41 @@ const shadows = keyframes`
   text-shadow: none;
 }
 10% {
-  text-shadow: 3px 3px 0 #f49b90;
+  text-shadow: 3px 3px 0 #0f395a;
 }
 20% {
-  text-shadow: 3px 3px 0 #f49b90,
-    6px 6px 0 #f28b7d;
+  text-shadow: 3px 3px 0 #0f395a,
+    6px 6px 0 #3872a0;
 }
 30% {
-  text-shadow: 3px 3px 0 #f49b90,
-    6px 6px 0 #f28b7d, 9px 9px #f07a6a;
+  text-shadow: 3px 3px 0 #0f395a,
+    6px 6px 0 #3872a0, 9px 9px #021829;
 }
 40% {
-  text-shadow: 3px 3px 0 #f49b90,
-    6px 6px 0 #f28b7d, 9px 9px #f07a6a,
-    12px 12px 0 #ee6352;
+  text-shadow: 3px 3px 0 #0f395a,
+    6px 6px 0 #3872a0, 9px 9px #021829,
+    12px 12px 0 #010f1a;
 }
 50% {
-  text-shadow: 3px 3px 0 #f49b90,
-    6px 6px 0 #f28b7d, 9px 9px #f07a6a,
-    12px 12px 0 #ee6352;
+  text-shadow: 3px 3px 0 #0f395a,
+    6px 6px 0 #3872a0, 9px 9px #021829,
+    12px 12px 0 #010f1a;
 }
 60% {
-  text-shadow: 3px 3px 0 #f49b90,
-    6px 6px 0 #f28b7d, 9px 9px #f07a6a,
-    12px 12px 0 #ee6352;
+  text-shadow: 3px 3px 0 #0f395a,
+    6px 6px 0 #3872a0, 9px 9px #021829,
+    12px 12px 0 #010f1a;
 }
 70% {
-  text-shadow: 3px 3px 0 #f49b90,
-    6px 6px 0 #f28b7d, 9px 9px #f07a6a;
+  text-shadow: 3px 3px 0 #0f395a,
+    6px 6px 0 #3872a0, 9px 9px #021829;
 }
 80% {
-  text-shadow: 3px 3px 0 #f49b90,
-    6px 6px 0 #f28b7d;
+  text-shadow: 3px 3px 0 #0f395a,
+    6px 6px 0 #3872a0;
 }
 90% {
-  text-shadow: 3px 3px 0 #f49b90;
+  text-shadow: 3px 3px 0 #0f395a;
 }
 100% {
   text-shadow: none;
@@ -101,14 +101,14 @@ const Maxim = styled.div`
   text-shadow: 3px 3px 20px gray, -2px 1px 30px gray;
   border-width: 4px 0px 4px 0px;
   font-size: 46px;
-  text-shadow: 3px 3px 0 #f49b90, 6px 6px 0 #f28b7d, 9px 9px #f07a6a,
-    12px 12px 0 #ee6352;
+  text-shadow: 3px 3px 0 #0f395a, 6px 6px 0 #3872a0, 9px 9px #021829,
+    12px 12px 0 #010f1a;
   font-family: bungee, sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   font-size: calc(2rem + 5vw);
 
-  color: #f6aca2;
+  color: #83bdeb;
   //color: transparent;
   //background-color: white;
   //background-clip: text;

@@ -117,10 +117,46 @@ const WrapMenu = styled.ul`
     text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
   }
   a {
+    position: relative;
     color: ${({ theme }) => theme.text};
+    transition: color 0.35s ease;
+    &::before {
+      content: '';
+      display: block;
+      right: 0;
+      left: auto;
+      width: 0;
+      height: 3px;
+      z-index: 2;
+      position: absolute;
+      bottom: 1px;
+      bottom: 0;
+      background-color: #235aa6;
+      transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
+    }
+    &::after {
+      content: '';
+      display: block;
+      right: 0;
+      left: auto;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      z-index: 2;
+      background-color: #f25757;
+      transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
+    }
   }
   .active {
     color: #1855b8;
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+    &::before {
+      width: 100%;
+      left: 0;
+    }
   }
 `;
 const rotate = keyframes`
@@ -195,7 +231,9 @@ const Header: FC<Props> = ({ changePageMode, theme }) => {
   const [menuMobile, openMenuMobile] = useState(false);
   const position = useScrollTracking();
   useEffect(() => {
-    scrollSpy.update();
+    setTimeout(() => {
+      scrollSpy.update();
+    }, 100);
   });
   useEffect(() => {
     const currentTime = new Date();
