@@ -20,16 +20,16 @@ const Menu = [
     to: 'about',
   },
   {
+    name: 'Projects',
+    to: 'projects',
+  },
+  {
     name: 'Skills',
     to: 'skill',
   },
   {
     name: 'Career',
     to: 'career',
-  },
-  {
-    name: 'Projects',
-    to: 'projects',
   },
 ];
 
@@ -241,7 +241,8 @@ const Header: FC<Props> = ({ changePageMode, theme }) => {
     if (currentOur < 6 || currentOur > 18) {
       changePageMode();
     }
-  }, []);
+  }, [changePageMode]);
+
   return (
     <WrapHeader>
       <CustomHeader active={position > 90} mobile={menuMobile}>

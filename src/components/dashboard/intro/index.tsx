@@ -93,6 +93,7 @@ const move = keyframes`
 
 const Maxim = styled.div`
   width: 70vw;
+  min-height: 350px;
   padding: 5px 20px;
   text-align: center;
   margin: 0px auto;
@@ -134,7 +135,8 @@ const WrapSocials = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #b0a5a5;
+  background: rgb(109, 213, 250, 0.5);
+  border-radius: 50px;
   @media screen and (max-width: 768px) {
     flex-direction: row;
   }
@@ -165,10 +167,7 @@ const IntroSection = () => {
   return (
     <Element name="home" id="home">
       <WrapIntroSection>
-        <Maxim>
-          Be where your feet are
-          {/* Hãy sống vui với hiện tại  */}
-        </Maxim>
+        <Maxim>{/* Be where your feet are */}</Maxim>
         <Intro>Youth is so short, Let's rock the way you like</Intro>
         <WrapSocials>
           <a

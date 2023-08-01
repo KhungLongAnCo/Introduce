@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Element } from 'react-scroll';
 import { Container, Title } from 'components/ui/common/index';
+import Rewarded from 'components/dashboard/rewarded/rewarded';
 import BgImg from '../../../assets/images/common/space-img.jpg';
 
 const AboutWrapper = styled(Element)`
@@ -12,9 +13,13 @@ const AboutWrapper = styled(Element)`
     return null;
   }};
   background-position: center;
-  padding: 5rem 0px;
+  padding: 0px;
   background-size: cover;
   background-repeat: no-repeat;
+  .custom-container {
+    padding-bottom: 0px !important;
+  }
+
   .wrap {
     color: ${({ theme }) => theme.text};
     text-shadow: ${({ theme }) => {
@@ -35,21 +40,19 @@ const AboutWrapper = styled(Element)`
 const AboutSection = () => {
   return (
     <AboutWrapper name="about" id="about">
-      <Container data-aos="fade-left">
+      <Container data-aos="fade-left" className="custom-container">
         <div className="wrap">
           <Title>*About me</Title>
 
           <h1 className="about">
-            Hi there :3 <br />
-            My name is Levi. I'm a Front-End Developer
+            Hi there!
+            <br /> My name is Luan {'('}Levi{')'}, and I'm a front-end developer
+            with 4 years of experience in front-end development.
+            <br /> I have experience working in both production and start-up
+            environments, and I am able to work independently as well as in a
+            group.
             <br />
-            I have 4 years of experiences in Front-End development.
-            <br />
-            Experience working in both Production and Start-Up environments.
-            <br />
-            Able to work independently as well as in a group.
-            <br />
-            My CV:{' '}
+            Here is My CV:{' '}
             <a
               href="https://www.topcv.vn/xem-cv/VwYCUwIDBF0DBgBWAV9ZAFNeAwgDBwJQAFUEAw23b5"
               target="_blank"
@@ -59,6 +62,7 @@ const AboutSection = () => {
             </a>
           </h1>
         </div>
+        <Rewarded />
       </Container>
     </AboutWrapper>
   );

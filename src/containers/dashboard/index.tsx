@@ -8,6 +8,7 @@ import Footer from 'layout/Footer';
 import ListProjects from 'components/dashboard/list-projects/index';
 import SEO from 'components/seo/index';
 import CarRunning from 'components/ui/cat-running/index';
+import Rewarded from 'components/dashboard/rewarded/rewarded';
 
 const Container = styled.div`
   color: ${({ theme }) => theme.text};
@@ -19,11 +20,11 @@ const DashBoard = () => {
       <SEO title="Nguyen Van Luan's Resume" />
       <IntroSection />
       <AboutSection />
+      <ListProjects />
       <Skills />
       <CarRunning />
       <RoadMap />
       <CarRunning />
-      <ListProjects />
       <Footer />
     </Container>
   );

@@ -5,243 +5,408 @@ import { SwiperOptions } from 'swiper';
 import styled from 'styled-components';
 import Swiper, { SwiperInstance } from 'react-id-swiper';
 
+import { Space, Table, Tag } from 'antd';
+import type { ColumnsType } from 'antd/es/table';
+
+const WrapTable = styled.div`
+  overflow: auto;
+  z-index: 100;
+  color: ${({ theme }) => theme.text};
+  table {
+    background-color: white;
+  }
+`;
+
 const ListProject = [
   {
     id: 1,
-    name: 'Bicycle Blue Book',
-    description: (
-      <>A Marketplace helps you buying and selling bicycles easily.</>
+    name: 'I-nautix',
+    business: (
+      <div>
+        <div>
+          <b>【Project】: </b> I-nautix
+          <br />
+          <b>【Business】:</b> Global Market Place for Inspectors and Inspection
+          Management
+        </div>
+        <hr />
+        <div>
+          <b>≪Responsibility≫</b>
+          <ul>
+            {' '}
+            <li>Work directly with customers</li>
+            <li>Coding and maintain system with Front-end leader side</li>
+            <li>Review members code and deloy</li>
+          </ul>
+        </div>
+      </div>
     ),
-    members: 'More than 10',
-    role: 'Front-End Developer',
-    link: 'https://www.bicyclebluebook.com/',
-    technologies: 'React Js, Next Js, HTML, SCSS ...',
+    process: (
+      <div>
+        Analysis/Requirement
+        <br /> Coding
+        <br /> Review code
+      </div>
+    ),
+    technologies: (
+      <div>
+        <ul>
+          <li>React Js</li>
+          <li>Nest Js</li>
+          <li>Node Js</li>
+          <li>My Sql</li>
+        </ul>
+      </div>
+    ),
+    // link: 'https://dev.i-nautix.com/',
+    size: 'More than 20',
+    role: 'Front-End Leader',
+    time: 'APRIL 2022 - AGUST-2023',
   },
   {
     id: 2,
-    name: 'I-nautix',
-    description: (
-      <>Global Market Place for Inspectors and Inspection Management</>
+    name: 'Angkorpass reseller',
+    business: (
+      <div>
+        <div>
+          <b>【Project】: </b> Angkorpass reseller
+          <br />
+          <b>【Business】:</b> Selling and managing tickets for angkor temple.
+        </div>
+        <hr />
+        <div>
+          <b>≪Responsibility≫</b>
+          <ul>
+            <li>Coding and maintain system with Front-end side</li>
+          </ul>
+        </div>
+      </div>
     ),
-    members: 'More than 10',
+    process: (
+      <div>
+        Analysis/Requirement
+        <br /> Coding
+        <br /> Review code
+      </div>
+    ),
+    technologies: (
+      <div>
+        <ul>
+          <li>React Js</li>
+          <li>Node Js</li>
+          <li>My Sql</li>
+        </ul>
+      </div>
+    ),
+    size: '2',
     role: 'Front-End Developer',
-    link: 'https://dev.i-nautix.com/',
-    technologies: 'React Js, Nest Js, SCSS ...',
+    link: '',
+    time: 'MARCH 2022 - APRIL 2022',
   },
   {
     id: 3,
-    name: 'IntelAds',
-    description: (
-      <>
-        Deliver advertising through outdoor signage and buses quickly and easily
-      </>
+    name: 'Pipeflare',
+    business: (
+      <div>
+        <div>
+          <b>【Project】: </b> Pipeflare{' '}
+          <a
+            href="https://pipeflare.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Now
+          </a>
+          <br />
+          <b>【Business】:</b> Marketing Zen crypto currency.(Belong project
+          Zen)
+          <br />
+        </div>
+        <hr />
+        <div>
+          <b>≪Responsibility≫</b>
+          <ul>
+            <li>Work directly with customers</li>
+            <li>
+              Coding and maintain system with Front-end mainly, Back-end
+              sometime
+            </li>
+          </ul>
+        </div>
+      </div>
     ),
-    members: 'More than 5',
+    process: (
+      <div>
+        Analysis/Requirement
+        <br /> Coding
+        <br /> Review code
+      </div>
+    ),
+    technologies: (
+      <div>
+        <ul>
+          <li>Javascript</li>
+          <li>Css</li>
+          <li>PHP</li>
+          <li>Laravel</li>
+          <li>My SQL</li>
+        </ul>
+      </div>
+    ),
+    size: 'More than 20',
     role: 'Front-End Developer',
-    link: 'https://intelads.vn/',
-    technologies: 'Js, HTML, SCSS ...',
+    link: 'https://pipeflare.io/',
+    time: 'MAY 2021 - MARCH 2022',
   },
   {
     id: 4,
-    name: 'Angkorpass reseller',
-    description: <>Selling and managing tickets for angkor temple.</>,
-    members: '2',
+    name: 'Horizen',
+    business: (
+      <div>
+        <div>
+          <b>【Project】: </b> Horizen{' '}
+          <a
+            href="https://www.horizen.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Now
+          </a>
+          <br />
+          <b>【Business】:</b> Marketing Zen crypto currency.(Belong project
+          Zen)
+        </div>
+        <hr />
+        <div>
+          <b>≪Responsibility≫</b>
+          <ul>
+            {' '}
+            <li>Work directly with customers</li>
+            <li>
+              {' '}
+              Coding and maintain system with Front-end mainly, Back-end
+              sometime
+            </li>
+          </ul>
+        </div>
+      </div>
+    ),
+    process: (
+      <div>
+        Analysis/Requirement
+        <br /> Coding
+        <br /> Review code
+      </div>
+    ),
+    technologies: (
+      <div>
+        <ul>
+          <li>Ruby</li>
+          <li>Javscript Js</li>
+          <li>Scss</li>
+        </ul>
+      </div>
+    ),
+    size: 'More than 20',
     role: 'Front-End Developer',
-    link: '',
-    technologies: 'Js, HTML, SCSS ...',
+    link: 'https://www.horizen.io/',
+    time: 'MAY 2021 - MARCH 2022',
   },
   {
     id: 5,
-    name: 'Pipeflare',
-    description: <>Marketing Zen crypto currency.</>,
-    members: 'More than 20',
+    name: 'Bicycle Blue Book V3',
+    business: (
+      <div>
+        <div>
+          <b>【Project】: </b> Bicycle Blue Book V3{' '}
+          <a
+            href="https://www.bicyclebluebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Now
+          </a>
+          <br />
+          <b>【Business】:</b> A Marketplace helps you buying and selling
+          bicycles easily
+        </div>
+        <hr />
+        <div>
+          <b>≪Responsibility≫</b>
+          <ul>
+            {' '}
+            <li>Coding and maintain system with Front-end side</li>
+          </ul>
+        </div>
+      </div>
+    ),
+    process: (
+      <div>
+        Analysis/Requirement
+        <br /> Coding
+        <br /> Review code
+      </div>
+    ),
+    technologies: (
+      <div>
+        <ul>
+          <li>Next Js</li>
+          <li>Typescript Js</li>
+          <li>Node Js</li>
+          <li>Express</li>
+        </ul>
+      </div>
+    ),
+    size: '8',
     role: 'Front-End Developer',
-    link: 'https://pipeflare.io/',
-    technologies: 'Ruby, HTML, Css, Js ...',
+    // link: 'https://www.bicyclebluebook.com/',
+    time: 'FEBRUARY 2021 - MAY 2021',
   },
   {
     id: 6,
-    name: 'Horizen',
-    description: <>Marketing Zen crypto currency.</>,
-    members: 'More than 20',
+    name: 'Bicycle Blue Book',
+    business: (
+      <div>
+        <div>
+          <b>【Project】: </b> Bicycle Blue Book{' '}
+          <a
+            href="https://www.bicyclebluebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Now
+          </a>
+          <br />
+          <b>【Business】:</b> A Marketplace helps you buying and selling
+          bicycles easily.
+        </div>
+        <hr />
+        <div>
+          <b>≪Responsibility≫</b>
+          <ul>
+            <li>Coding and maintain system with Front-end side</li>
+          </ul>
+        </div>
+      </div>
+    ),
+    process: (
+      <div>
+        Analysis/Requirement
+        <br /> Coding
+        <br /> Review code
+      </div>
+    ),
+    technologies: (
+      <div>
+        <ul>
+          <li>React Js</li>
+          <li>Node Js</li>
+        </ul>
+      </div>
+    ),
+    size: 'More than 20',
     role: 'Front-End Developer',
-    link: 'https://www.horizen.io/',
-    technologies: 'Laravel, Php, Js ...',
+    link: 'https://www.bicyclebluebook.com/',
+    time: 'APRIL 2020 - FEBRUARY 2021',
   },
   {
     id: 7,
-    name: 'Bicycle Blue Book V3',
-    description: (
-      <>A Marketplace helps you buying and selling bicycles easily.</>
+    name: 'IntelAds',
+    business: (
+      <div>
+        <div>
+          <b>【Project】: </b> IntelAds{' '}
+          <a
+            href="https://intelads.vn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Now
+          </a>
+          <br />
+          <b>【Business】:</b> Deliver advertising through outdoor signage and
+          buses quickly and easily
+        </div>
+        <hr />
+        <div>
+          <b>≪Responsibility≫</b>
+          <ul>
+            {' '}
+            <li>Work directly with customers</li>
+            <li>
+              Coding and maintain system with Front-end mainly, sometime BE
+            </li>
+            <li>Review members code and deloy</li>
+          </ul>
+        </div>
+      </div>
     ),
-    members: 'More than 5',
+    process: (
+      <div>
+        Analysis/Requirement
+        <br /> Coding
+        <br /> Review code
+      </div>
+    ),
+    technologies: (
+      <div>
+        <ul>
+          <li>React Js</li>
+          <li>Javascript</li>
+          <li>Java</li>
+          <li>Postgre Sql</li>
+        </ul>
+      </div>
+    ),
+    size: 'More than 5',
     role: 'Front-End Developer',
-    // link: 'https://www.bicyclebluebook.com/',
-    technologies: 'Next Js, HTML, SCSS, Typescript ...',
+    link: 'https://intelads.vn/',
+    time: 'AUGUST 2019 - MARCH 2020',
   },
 ];
 
-const slideOptions: SwiperOptions = {
-  slidesPerView: 1,
-  // init: false,
-  centeredSlides: false,
-  mousewheel: {
-    forceToAxis: true,
-    releaseOnEdges: false,
-    invert: false,
+const columns: ColumnsType<any> = [
+  {
+    title: 'NO',
+    dataIndex: 'id',
+    key: 'id',
   },
-  spaceBetween: 20,
-  height: 430,
-  breakpoints: {
-    768: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      centeredSlides: false,
-    },
-    1200: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
+  {
+    title: 'Period',
+    dataIndex: 'time',
+    key: 'time',
   },
-};
-
-const Wrapper = styled.div`
-  padding: 3rem 0px;
-  position: relative;
-  .swiper-slide {
-    height: auto !important;
-  }
-`;
-const ProjectItem = styled.div`
-  padding: 3rem 0px;
-  border-radius: 5px;
-  height: 100%;
-  min-height: 240px;
-  box-shadow: ${({ theme }) => {
-    if (theme.text === '#363537') {
-      return `rgb(1 220 255 / 25%) 0px 30px 60px -12px inset, rgb(8 8 8 / 30%) 0px 18px 36px -18px inset;`;
-    }
-    return `rgb(144 240 255 / 25%) 0px 30px 60px -12px inset, rgb(219 250 255 / 30%) 0px 18px 36px -18px inset;`;
-  }};
-  padding: 1.5rem;
-  color: ${({ theme }) => theme.text};
-  display: flex;
-  flex-direction: column;
-  h1 {
-    color: ${({ theme }) => theme.text};
-  }
-  .content {
-    flex-grow: 1;
-    .info {
-      display: flex;
-      padding: 0.2rem 0px;
-    }
-    .label {
-      min-width: 115px;
-      display: inline-block;
-    }
-  }
-  .visit {
-    text-align: right;
-    text-decoration: underline;
-    font-style: italic;
-  }
-`;
-const NextBtn = styled.div`
-  @keyframes animation {
-    0% {
-      right: -40px;
-    }
-    50% {
-      right: -55px;
-    }
-    100% {
-      right: -40px;
-    }
-  }
-  position: absolute;
-  font-weight: bold;
-  font-size: 50px;
-  right: -40px;
-  top: 36%;
-  animation-name: animation;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
-  cursor: pointer;
-  animation-iteration-count: infinite;
-`;
+  {
+    title: 'Business',
+    dataIndex: 'business',
+    key: 'business',
+  },
+  {
+    title: 'Development Environment',
+    dataIndex: 'technologies',
+    key: 'technologies',
+  },
+  {
+    title: 'Process',
+    dataIndex: 'process',
+    key: 'process',
+  },
+  {
+    title: 'Team size',
+    dataIndex: 'size',
+    key: 'size',
+  },
+];
 
 const ListProjects = () => {
-  const swiper = useRef<SwiperInstance>(null);
-  const goNext = useCallback(() => {
-    if (swiper.current) {
-      swiper.current.slideNext();
-    }
-  }, []);
-  const goPrev = useCallback(() => {
-    if (swiper.current) {
-      swiper.current.slidePrev();
-    }
-  }, []);
   return (
     <Element name="projects" id="projects">
       <Container>
         <Title>* Projects</Title>
-        <Wrapper>
-          <Swiper
-            {...slideOptions}
-            getSwiper={(c) => {
-              swiper.current = c;
-            }}
-          >
-            {ListProject.map((item) => (
-              <div key={item.id}>
-                <ProjectItem>
-                  <h1>{item.name}</h1>
-                  <div className="content">
-                    <div className="info">
-                      <b className="label">Description:</b>
-                      <span>{item.description}</span>
-                    </div>
-                    <div className="info">
-                      <b className="label">Role:</b>
-                      {item.role}
-                    </div>
-                    <div className="info">
-                      <b className="label">Team member:</b> {item.members}
-                    </div>
-                    <div className="info">
-                      <b className="label">Technologies:</b> {item.technologies}
-                    </div>
-                  </div>
-                  {item.link ? (
-                    <a
-                      href={item.link}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      className="visit"
-                    >
-                      Visit now
-                    </a>
-                  ) : (
-                    <div className="visit">private</div>
-                  )}
-                  {/* {item.link2 && (
-                    <a
-                      href={item.link2}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      className="visit"
-                    >
-                      Visit now (web 2)
-                    </a>
-                  )} */}
-                </ProjectItem>
-              </div>
-            ))}
-          </Swiper>
-          <NextBtn onClick={goNext}>{'>'}</NextBtn>
-        </Wrapper>
+
+        <WrapTable>
+          <Table columns={columns} bordered dataSource={ListProject} />
+        </WrapTable>
       </Container>
     </Element>
   );

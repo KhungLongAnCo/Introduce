@@ -13,6 +13,7 @@ import Header from 'layout/Header';
 import 'antd/dist/antd.css';
 import 'aos/dist/aos.css';
 import 'swiper/css/swiper.css';
+import LoadingWholePage from 'components/loading/LoadingWholePage';
 
 AOS.init();
 
@@ -27,9 +28,10 @@ const App: FC = () => {
       <ThemeProvider theme={theme === PageMode.Light ? lightTheme : darkTheme}>
         <Suspense
           fallback={
-            <div style={{ textAlign: 'center', paddingTop: 100 }}>
-              <Spin size="large" />
-            </div>
+            <LoadingWholePage />
+            // <div style={{ textAlign: 'center', paddingTop: 100 }}>
+            //   <Spin size="large" />
+            // </div>
           }
         >
           <Header changePageMode={toggleTheme} theme={theme} />

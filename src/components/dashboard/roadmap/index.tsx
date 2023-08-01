@@ -16,13 +16,20 @@ interface JourneyModel {
 }
 const Journeys: JourneyModel[] = [
   {
-    timeLine: 'APRIL 2020 - Now',
+    timeLine: 'APRIL 2020 - AUGUST 2023',
     title: 'VMO-GROUP',
     func: 'FRONT-END DEVELOPER',
     description: (
       <div>
-        - Maintain application with more than 20,000 active users. <br />+
-        Working mainly with ui framework as REACT JS, NEXT JS, TYPESCRIPT
+        + Maintained an application with more than 20,000 active users. <br />
+        Worked as a front-end developer and tech lead on multiple projects,
+        using a variety of frameworks and libraries including Vanilla
+        JavaScript, jQuery, React.js, Next.js, and TypeScript.
+        <br />+ Received recognition as an excellent team member, and was
+        awarded a Certificate of Merit for outstanding performance.{' '}
+        {/* <a href="../../../assets/images/common/avatar.jpg" download>
+          View Certificate
+        </a> */}
       </div>
     ),
   },
@@ -32,9 +39,11 @@ const Journeys: JourneyModel[] = [
     func: 'FULL-STACK DEVELOPER',
     description: (
       <div>
-        - Working as full-stack developer developing Outdoor Ads management web{' '}
-        <br />+ Working mainly with REACT JS, JAVA SPRING BOOT, MARIA DB,
-        POSTGRESQL
+        + Start my frist job
+        <br /> + Working as a full-stack developer, developing a web application
+        for outdoor advertising management.
+        <br />+ Mainly working with React.js, JavaScript, Java Spring Boot,
+        MariaDB, and PostgreSQL.
       </div>
     ),
   },
