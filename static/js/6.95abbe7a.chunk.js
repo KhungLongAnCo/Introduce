@@ -1,0 +1,2 @@
+(this["webpackJsonpmy-app"]=this["webpackJsonpmy-app"]||[]).push([[6],{444:function(e,t,a){"use strict";a.r(t);var n=a(0),r=a.n(n),i=a(427),p=a.n(i),s=a(420),c=a.n(s),o=a(10);t.default=function(){var e=Object(o.f)();return r.a.createElement(c.a,{status:"404",title:"404",subTitle:"Sorry, the page you visited does not exist.",extra:r.a.createElement(p.a,{type:"primary",onClick:function(){return e.replace("/")}},"Back Home")})}}}]);
+//# sourceMappingURL=6.95abbe7a.chunk.js.map
